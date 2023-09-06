@@ -30,7 +30,7 @@ pipeline {
         }
         stage('docker build') {
             steps {
-                sh "docker build -t 282572191003.dkr.ecr.us-east-1.amazonaws.com/my-app:$BUILD_NUMBER ."
+                sh "cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t 282572191003.dkr.ecr.us-east-1.amazonaws.com/my-app:$BUILD_NUMBER ."
                 sh "docker push 282572191003.dkr.ecr.us-east-1.amazonaws.com/my-app:$BUILD_NUMBER"
             }
         }
